@@ -11,17 +11,27 @@ import pyromod
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import os
 import time
+import time
+import threading
 
-pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
+def keep_alive():
+    while True:
+        time.sleep(200)  # Sleep for 5 minutes (or any interval)
+        print("DARKXSIDE78")  # Optional: Just to check if it's still running
+
+# Start the background task in a separate thread
+threading.Thread(target=keep_alive, daemon=True).start()
+
+pyrogram.utils.MIN_CHANNEL_ID = -1002385922224
 
 # Setting SUPPORT_CHAT directly here
-SUPPORT_CHAT = int(os.environ.get("SUPPORT_CHAT", "-1001953724858"))
+SUPPORT_CHAT = int(os.environ.get("SUPPORT_CHAT", "-1002385922224"))
 
 class Bot(Client):
 
     def __init__(self):
         super().__init__(
-            name="codeflixbots",
+            name="GenAutoRenamer",
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
             bot_token=Config.BOT_TOKEN,
@@ -41,7 +51,7 @@ class Bot(Client):
         if Config.WEBHOOK:
             app = web.AppRunner(await web_server())
             await app.setup()       
-            await web.TCPSite(app, "0.0.0.0", 8080).start()     
+            await web.TCPSite(app, "0.0.0.0", 8020).start()     
         print(f"{me.first_name} Is Started.....✨️")
 
         # Calculate uptime using timedelta

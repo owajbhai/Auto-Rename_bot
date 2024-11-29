@@ -5,21 +5,21 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "238902")
-    API_HASH  = os.environ.get("API_HASH", "da7e86c7b0e6220b8a9e0aed228a68")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7365322253:AAHboQtxtJ2Ov5E8xqBvbmz2fG82Atrw") 
+    API_ID    = os.environ.get("API_ID", "20604892")
+    API_HASH  = os.environ.get("API_HASH", "a75d4dab1a2483a157d93e3ae9bf7500")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7234740603:AAEJTnn_BevPd4OhJULOCkuXknWhs0Puz_g") 
 
     # database config
-    DB_NAME = os.environ.get("DB_NAME","codeflix")     
-    DB_URL  = os.environ.get("DB_URL","mongodb+srv://public:public@cluster0.aisg0rh.mongodb.net/?retryWrites=true&w=majority")
+    DB_NAME = os.environ.get("DB_NAME","AutoRenamer")     
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://nitinkumardhundhara:DARKXSIDE78@cluster0.wdive.mongodb.net/?retryWrites=true&w=majority")
     PORT = os.environ.get("PORT", "25")
  
     # other configs
     BOT_UPTIME  = time.time()
-    START_PIC   = os.environ.get("START_PIC", "https://graph.org/file/29a3acbbab9de5f45a5fe.jpg")
-    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '6497757690').split()]
-    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'codeflix_bots,codeflixsupport,anime_cruise_netflix').split(',')
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001868871195"))
+    START_PIC   = os.environ.get("START_PIC", "https://static.vecteezy.com/system/resources/thumbnails/036/095/205/small_2x/ai-generated-beautiful-anime-girl-photo.jpg")
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '6302971969 7086472788').split()]
+    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', '').split(',')
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002385922224"))
     
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
